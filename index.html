@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Linking CSS -->
+    <link rel="stylesheet" href="./styles/styles.css">
+
+    <title>Clock</title>
+
+</head>
+
+<body onload="updateTime(); setInterval('updateTime()', 1000 )">
+    <section id="header">
+        <div class="container-time">
+            <div class="current-time">
+                00:00:00XX
+            </div>
+        </div>
+    </section>
+</body>
+<script src="./js/app.js"></script>
+</html>
