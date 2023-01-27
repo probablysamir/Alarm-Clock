@@ -15,10 +15,20 @@
 
 <body onload="updateTime(); setInterval('updateTime()', 1000 )">
     <section id="header">
+        <audio id="alarm" src="./audio/beep.mp3"></audio>
         <div class="container-time">
             <div class="current-time">
                 00:00:00XX
             </div>
+            <div class="alarm-time">
+                Set an alarm for <div class="alarm-display"></div>
+            </div>
+            <div class="alarm-buttons"><ul>
+                <li class="btn-alarm plus">+</li>
+                <li class="btn-alarm minus">-</li>
+                <li class="btn-alarm set">Set</li>
+            </ul></div>
+            <div id="alarm-button" style="cursor: pointer;">alarm</div>
         </div>
     </section>
 </body>

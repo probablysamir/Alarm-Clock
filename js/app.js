@@ -12,3 +12,10 @@ function updateTime(){
     let currentTime = document.querySelector('.current-time');
     currentTime.innerText = cHour+":"+cMin+":"+cSec+ampm;
 }
+
+alarmButton = document.getElementById('alarm-button')
+alarmButton.addEventListener('click',function(){
+    var alarm = document.getElementById('alarm');
+    console.log(alarm);
+    alarm.play(); 
+})
