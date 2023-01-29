@@ -68,7 +68,7 @@ body {
 }
 
 .alarm-on{
-    display: flex;
+    display: none;
     justify-content: center;
 }
 

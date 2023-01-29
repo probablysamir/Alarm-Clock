@@ -7,7 +7,9 @@ let currentDate, cHour, cSec, ampm, currentTime, time, rHour, rMin, rSec, alarmB
 let alarmFlag = 0;
 let remainingTime=document.querySelector('.remaining-time');
 let alarmAlert = document.querySelector('#alarm-alert');
+let alarmBox = document.querySelector('.alarm-on');
 setAlarm.addEventListener('click', function () {
+    alarmBox.style.display='flex';
     time = inputTime.value.split(":");
     alarmFlag=1;
     alarmAlert.innerText="The alarm will go after:";
@@ -15,6 +17,7 @@ setAlarm.addEventListener('click', function () {
 })
 stopAlarm.addEventListener('click', function () {
     alarmFlag = 0;
+    alarmBox.style.display = 'none';
     alarmOff();
 })
 
@@ -44,14 +47,15 @@ function alarmCheck() {
     rMin=rMin<0?rMin+60:rMin;
     rHour=time[0]-cHour-1;
     rHour=rHour<0?rHour+24:rHour;
+    if(rHour==23 && time[1]>cMin){rHour=0};
     rSec=60-cSec;
     console.log(rHour);
-    if(rHour==0 || rHour==23 && rMin==0){
+    if(rHour==0 && time[1]==cMin || rHour==23 && rMin==0){
         remainingTime.innerText="";
         alarmAlert.innerText="Ring Ring!!"
     }
     else{
-        remainingTime.innerText=`${rHour} hours ${rMin} minutes ${rSec} seconds`
+        remainingTime.innerText=`${rHour} hours ${rMin} minutes ${rSec} seconds`;
     }
 }
 function alarmOn(){
