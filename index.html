@@ -5,30 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
 
     <!-- Linking CSS -->
     <link rel="stylesheet" href="./styles/styles.css">
 
-    <title>Clock</title>
-
+    <!-- Fontawesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body onload="updateTime(); setInterval('updateTime()', 1000 )">
     <section id="header">
         <audio id="alarm" src="./audio/beep.mp3"></audio>
         <div class="container-time">
-            <div class="current-time">
-                00:00:00XX
+            <div class="current-time"></div>
+            <input type="time" id="input-time" value="00:00">
+            <div class="btn set-alarm">Set Alarm</div>
+            <!-- <div id="alarm-button" style="cursor: pointer;">alarm</div> -->
+            <div class="alarm-on">
+                <div class="remaining-time-container">
+                    <span id="alarm-alert">The alarm will go after:</span>
+                    <div class="remaining-time">3 hours 45 minutes 15 seconds</div>
+                </div>
+                <i class="fa-regular fa-circle-stop stop-alarm"></i>
             </div>
-            <div class="alarm-time">
-                Set an alarm for <div class="alarm-display"></div>
-            </div>
-            <div class="alarm-buttons"><ul>
-                <li class="btn-alarm plus">+</li>
-                <li class="btn-alarm minus">-</li>
-                <li class="btn-alarm set">Set</li>
-            </ul></div>
-            <div id="alarm-button" style="cursor: pointer;">alarm</div>
         </div>
     </section>
 </body>
